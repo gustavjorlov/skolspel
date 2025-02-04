@@ -103,7 +103,8 @@ export function SjeGame() {
   const handleNameSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (playerName.trim()) {
-      saveHighScore(playerName.trim(), roundScore);
+      const finalScore = gameMode === 'time' ? roundScore : currentStreak;
+      saveHighScore(playerName.trim(), finalScore);
       setPlayerName('');
     }
   };
@@ -230,11 +231,11 @@ export function SjeGame() {
                 maxLength={20}
                 required
               />
-              {highScores.length > 0 && (
+              {(gameMode === 'time' ? highScores : streakHighScores).length > 0 && (
                 <div className="existing-names">
                   <p>Eller välj ditt namn:</p>
                   <div className="name-buttons">
-                    {highScores.map((score, index) => (
+                    {(gameMode === 'time' ? highScores : streakHighScores).map((score, index) => (
                       <button
                         key={index}
                         type="button"
