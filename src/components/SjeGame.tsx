@@ -19,6 +19,7 @@ const MAX_HIGH_SCORES = 5;
 export function SjeGame() {
   const [currentWord, setCurrentWord] = useState<Word | null>(null);
   const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState<'correct' | 'incorrect' | ''>('');
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(ROUND_DURATION);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -97,6 +98,7 @@ export function SjeGame() {
     setRoundScore(0);
     setScore(0);
     setMessage('');
+    setMessageType('');
     setCurrentWord(getRandomWord());
     setIsPlaying(true);
     setShowNameInput(false);
@@ -105,6 +107,7 @@ export function SjeGame() {
   const newRound = useCallback(() => {
     setCurrentWord(getRandomWord());
     setMessage('');
+    setMessageType('');
   }, [getRandomWord]);
 
   useEffect(() => {
@@ -140,11 +143,16 @@ export function SjeGame() {
 
     if (prefix === currentWord.parts[0]) {
       setMessage(`Rätt! "${prefix + currentWord.parts[1]}" stavas med "${prefix}"`);
+      setMessageType('correct');
       setScore(score + 1);
       setRoundScore(roundScore + 1);
-      setTimeout(newRound, 1000);
+      setTimeout(() => {
+        setMessageType('');
+        newRound();
+      }, 1000);
     } else {
       setMessage(`Fel! Ordet stavas med "${currentWord.parts[0]}"`);
+      setMessageType('incorrect');
     }
   };
 
@@ -153,7 +161,7 @@ export function SjeGame() {
       <div className="sje-game">
         <h1>Gissa sje-ljudet!</h1>
         <div className="score">Bästa poäng: {score}</div>
-        <div className="message">{message}</div>
+        <div className={`message ${messageType}`}>{message}</div>
         {showNameInput ? (
           <form onSubmit={handleNameSubmit} className="name-input-form">
             <div className="name-input-container">
@@ -220,7 +228,7 @@ export function SjeGame() {
           <span className="prefix">?</span>
           <span className="word-ending">{currentWord.parts[1]}</span>
         </div>
-        <div className="message">{message}</div>
+        <div className={`message ${messageType}`}>{message}</div>
       </div>
       <div className="buttons">
         {prefixes.map((prefix) => (

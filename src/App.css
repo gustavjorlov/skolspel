@@ -111,6 +111,16 @@ body {
   color: var(--text-primary);
 }
 
+.message.correct {
+  color: var(--button-success);
+  font-weight: bold;
+}
+
+.message.incorrect {
+  color: var(--error-color);
+  font-weight: bold;
+}
+
 .buttons {
   display: flex;
   flex-wrap: wrap;
