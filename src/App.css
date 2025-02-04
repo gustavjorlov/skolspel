@@ -161,7 +161,6 @@
   font-size: 1rem;
   border: 2px solid #3498db;
   border-radius: 0.5rem;
-  width: 100%;
   outline: none;
 }
 
@@ -240,7 +239,6 @@
   }
 
   .name-input-form input {
-    width: 100%;
     max-width: 300px;
   }
 }
