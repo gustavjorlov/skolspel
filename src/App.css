@@ -39,8 +39,10 @@ body {
 #root {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .app {
@@ -51,11 +53,12 @@ body {
 
 .sje-game {
   background: var(--bg-primary);
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 4px 6px var(--shadow-color);
   width: 100%;
   border: 1px solid var(--border-color);
+  box-sizing: border-box;
 }
 
 .sje-game h1 {
@@ -169,7 +172,7 @@ body {
   background-color: var(--bg-secondary);
   border-radius: 2rem;
   border: 1px solid var(--border-color);
-  width: 100%;
+  width: 80%;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -331,7 +334,7 @@ body {
   }
 
   .word-display {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .name-input-form {
@@ -341,5 +344,46 @@ body {
 
   .name-input-form input {
     max-width: 300px;
+  }
+
+  .game-mode-selector {
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: 0.5rem;
+  }
+
+  .game-mode-selector button {
+    padding: 0.6rem;
+    font-size: 1rem;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+  }
+  
+  .game-mode-selector button:last-child {
+    border-radius: 0 0 0.5rem 0.5rem !important;
+  }
+
+  .game-stats {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .time-left,
+  .score {
+    font-size: 1.2rem;
+  }
+
+  .start-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .high-scores h2 {
+    font-size: 1.3rem;
+  }
+
+  .high-scores li {
+    font-size: 1rem;
+    padding: 0.4rem;
   }
 }
