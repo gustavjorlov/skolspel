@@ -6,8 +6,15 @@ type Word = {
   parts: [string, string];
 };
 
+type HighScore = {
+  name: string;
+  score: number;
+  date: string;
+};
+
 const ROUND_DURATION = 30; // seconds
 const prefixes = ['sj', 'stj', 'tj', 'k', 'kj', 'skj', 'sh'];
+const MAX_HIGH_SCORES = 5;
 
 export function SjeGame() {
   const [currentWord, setCurrentWord] = useState<Word | null>(null);
@@ -16,6 +23,17 @@ export function SjeGame() {
   const [timeLeft, setTimeLeft] = useState(ROUND_DURATION);
   const [isPlaying, setIsPlaying] = useState(false);
   const [roundScore, setRoundScore] = useState(0);
+  const [showNameInput, setShowNameInput] = useState(false);
+  const [playerName, setPlayerName] = useState('');
+  const [highScores, setHighScores] = useState<HighScore[]>([]);
+
+  useEffect(() => {
+    // Load high scores from localStorage when component mounts
+    const savedScores = localStorage.getItem('sjeHighScores');
+    if (savedScores) {
+      setHighScores(JSON.parse(savedScores));
+    }
+  }, []);
 
   const getRandomWord = useCallback(function(): Word {
     const words = wordData.words;
@@ -27,6 +45,30 @@ export function SjeGame() {
     };
   }, []);
 
+  const saveHighScore = (name: string, score: number) => {
+    const newScore: HighScore = {
+      name,
+      score,
+      date: new Date().toLocaleDateString('sv-SE')
+    };
+
+    const newHighScores = [...highScores, newScore]
+      .sort((a, b) => b.score - a.score)
+      .slice(0, MAX_HIGH_SCORES);
+
+    setHighScores(newHighScores);
+    localStorage.setItem('sjeHighScores', JSON.stringify(newHighScores));
+    setShowNameInput(false);
+  };
+
+  const handleNameSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (playerName.trim()) {
+      saveHighScore(playerName.trim(), roundScore);
+      setPlayerName('');
+    }
+  };
+
   const startNewGame = () => {
     setTimeLeft(ROUND_DURATION);
     setRoundScore(0);
@@ -34,6 +76,7 @@ export function SjeGame() {
     setMessage('');
     setCurrentWord(getRandomWord());
     setIsPlaying(true);
+    setShowNameInput(false);
   };
 
   const newRound = useCallback(() => {
@@ -48,6 +91,7 @@ export function SjeGame() {
           if (prev <= 1) {
             setIsPlaying(false);
             setMessage(`Spelet är slut! Du klarade ${roundScore} ord på ${ROUND_DURATION} sekunder!`);
+            setShowNameInput(true);
             return 0;
           }
           return prev - 1;
@@ -87,9 +131,35 @@ export function SjeGame() {
         <h1>Gissa sje-ljudet!</h1>
         <div className="score">Bästa poäng: {score}</div>
         <div className="message">{message}</div>
-        <button onClick={startNewGame} className="start-button">
-          {score === 0 ? 'Starta spelet' : 'Spela igen'}
-        </button>
+        {showNameInput ? (
+          <form onSubmit={handleNameSubmit} className="name-input-form">
+            <input
+              type="text"
+              value={playerName}
+              onChange={(e) => setPlayerName(e.target.value)}
+              placeholder="Skriv ditt namn"
+              maxLength={20}
+              required
+            />
+            <button type="submit">Spara poäng</button>
+          </form>
+        ) : (
+          <button onClick={startNewGame} className="start-button">
+            {score === 0 ? 'Starta spelet' : 'Spela igen'}
+          </button>
+        )}
+        {highScores.length > 0 && (
+          <div className="high-scores">
+            <h2>Topplista</h2>
+            <ul>
+              {highScores.map((score, index) => (
+                <li key={index}>
+                  {score.name}: {score.score} ord ({score.date})
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     );
   }
