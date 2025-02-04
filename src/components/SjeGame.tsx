@@ -6,6 +6,8 @@ type Word = {
   parts: [string, string];
 };
 
+type GameMode = 'time' | 'streak';
+
 type HighScore = {
   name: string;
   score: number;
@@ -13,6 +15,10 @@ type HighScore = {
 };
 
 const ROUND_DURATION = 30; // seconds
+const HIGH_SCORES_KEY = {
+  time: 'sjeHighScores',
+  streak: 'sjeStreakHighScores'
+};
 const prefixes = ['sj', 'stj', 'tj', 'k', 'kj', 'skj', 'sh'];
 const MAX_HIGH_SCORES = 5;
 
@@ -26,13 +32,22 @@ export function SjeGame() {
   const [roundScore, setRoundScore] = useState(0);
   const [showNameInput, setShowNameInput] = useState(false);
   const [playerName, setPlayerName] = useState('');
+  const [gameMode, setGameMode] = useState<GameMode>('time');
   const [highScores, setHighScores] = useState<HighScore[]>([]);
+  const [streakHighScores, setStreakHighScores] = useState<HighScore[]>([]);
+  const [currentStreak, setCurrentStreak] = useState(0);
+  const [bestStreak, setBestStreak] = useState(0);
 
   useEffect(() => {
     // Load high scores from localStorage when component mounts
-    const savedScores = localStorage.getItem('sjeHighScores');
-    if (savedScores) {
-      setHighScores(JSON.parse(savedScores));
+    const savedTimeScores = localStorage.getItem(HIGH_SCORES_KEY.time);
+    const savedStreakScores = localStorage.getItem(HIGH_SCORES_KEY.streak);
+    
+    if (savedTimeScores) {
+      setHighScores(JSON.parse(savedTimeScores));
+    }
+    if (savedStreakScores) {
+      setStreakHighScores(JSON.parse(savedStreakScores));
     }
   }, []);
 
@@ -48,13 +63,17 @@ export function SjeGame() {
 
   const saveHighScore = (name: string, score: number) => {
     const trimmedName = name.trim();
-    const existingScoreIndex = highScores.findIndex(s => s.name === trimmedName);
+    const currentScores = gameMode === 'time' ? highScores : streakHighScores;
+    const setScores = gameMode === 'time' ? setHighScores : setStreakHighScores;
+    const storageKey = HIGH_SCORES_KEY[gameMode];
+    
+    const existingScoreIndex = currentScores.findIndex(s => s.name === trimmedName);
     let newHighScores: HighScore[];
 
     if (existingScoreIndex !== -1) {
       // Update existing score if new score is higher
-      if (score > highScores[existingScoreIndex].score) {
-        newHighScores = highScores.map((s, index) => 
+      if (score > currentScores[existingScoreIndex].score) {
+        newHighScores = currentScores.map((s, index) => 
           index === existingScoreIndex 
             ? { ...s, score, date: new Date().toLocaleDateString('sv-SE') }
             : s
@@ -65,7 +84,7 @@ export function SjeGame() {
       }
     } else {
       // Add new score
-      newHighScores = [...highScores, {
+      newHighScores = [...currentScores, {
         name: trimmedName,
         score,
         date: new Date().toLocaleDateString('sv-SE')
@@ -76,8 +95,8 @@ export function SjeGame() {
       .sort((a, b) => b.score - a.score)
       .slice(0, MAX_HIGH_SCORES);
 
-    setHighScores(newHighScores);
-    localStorage.setItem('sjeHighScores', JSON.stringify(newHighScores));
+    setScores(newHighScores);
+    localStorage.setItem(storageKey, JSON.stringify(newHighScores));
     setShowNameInput(false);
   };
 
@@ -94,8 +113,12 @@ export function SjeGame() {
   };
 
   const startNewGame = () => {
-    setTimeLeft(ROUND_DURATION);
-    setRoundScore(0);
+    if (gameMode === 'time') {
+      setTimeLeft(ROUND_DURATION);
+      setRoundScore(0);
+    } else {
+      setCurrentStreak(0);
+    }
     setScore(0);
     setMessage('');
     setMessageType('');
@@ -111,7 +134,7 @@ export function SjeGame() {
   }, [getRandomWord]);
 
   useEffect(() => {
-    if (isPlaying && timeLeft > 0) {
+    if (gameMode === 'time' && isPlaying && timeLeft > 0) {
       const timer = setInterval(() => {
         setTimeLeft((prev) => {
           if (prev <= 1) {
@@ -126,7 +149,7 @@ export function SjeGame() {
 
       return () => clearInterval(timer);
     }
-  }, [isPlaying, timeLeft, roundScore]);
+  }, [isPlaying, timeLeft, roundScore, gameMode]);
 
   useEffect(() => {
     // Initialize with a word but don't start playing
@@ -145,7 +168,17 @@ export function SjeGame() {
       setMessage(`Rätt! "${prefix + currentWord.parts[1]}" stavas med "${prefix}"`);
       setMessageType('correct');
       setScore(score + 1);
-      setRoundScore(roundScore + 1);
+      
+      if (gameMode === 'time') {
+        setRoundScore(roundScore + 1);
+      } else {
+        const newStreak = currentStreak + 1;
+        setCurrentStreak(newStreak);
+        if (newStreak > bestStreak) {
+          setBestStreak(newStreak);
+        }
+      }
+      
       setTimeout(() => {
         setMessageType('');
         newRound();
@@ -153,6 +186,12 @@ export function SjeGame() {
     } else {
       setMessage(`Fel! Ordet stavas med "${currentWord.parts[0]}"`);
       setMessageType('incorrect');
+      
+      if (gameMode === 'streak') {
+        setIsPlaying(false);
+        setMessage(`Spelet är slut! Du klarade ${currentStreak} ord i rad!`);
+        setShowNameInput(true);
+      }
     }
   };
 
@@ -160,7 +199,25 @@ export function SjeGame() {
     return (
       <div className="sje-game">
         <h1>Gissa sje-ljudet!</h1>
-        <div className="score">Bästa poäng: {score}</div>
+        <div className="game-mode-selector">
+          <button 
+            onClick={() => setGameMode('time')} 
+            className={gameMode === 'time' ? 'selected' : ''}
+          >
+            30 sekunder
+          </button>
+          <button 
+            onClick={() => setGameMode('streak')} 
+            className={gameMode === 'streak' ? 'selected' : ''}
+          >
+            Så många som möjligt i rad
+          </button>
+        </div>
+        <div className="score">
+          {gameMode === 'time' 
+            ? `Bästa poäng: ${score}` 
+            : `Bästa svit: ${bestStreak}`}
+        </div>
         <div className={`message ${messageType}`}>{message}</div>
         {showNameInput ? (
           <form onSubmit={handleNameSubmit} className="name-input-form">
@@ -198,13 +255,13 @@ export function SjeGame() {
             {score === 0 ? 'Starta spelet' : 'Spela igen'}
           </button>
         )}
-        {highScores.length > 0 && (
+        {(gameMode === 'time' ? highScores : streakHighScores).length > 0 && (
           <div className="high-scores">
-            <h2>Topplista</h2>
+            <h2>Topplista - {gameMode === 'time' ? '30 sekunder' : 'Svit'}</h2>
             <ul>
-              {highScores.map((score, index) => (
+              {(gameMode === 'time' ? highScores : streakHighScores).map((score, index) => (
                 <li key={index}>
-                  {score.name}: {score.score} ord ({score.date})
+                  {score.name}: {score.score} {gameMode === 'time' ? 'ord' : 'i rad'} ({score.date})
                 </li>
               ))}
             </ul>
@@ -220,8 +277,14 @@ export function SjeGame() {
     <div className="sje-game">
       <h1>Gissa sje-ljudet!</h1>
       <div className="game-stats">
-        <div className="time-left">Tid kvar: {timeLeft}s</div>
-        <div className="score">Ord denna runda: {roundScore}</div>
+        {gameMode === 'time' ? (
+          <>
+            <div className="time-left">Tid kvar: {timeLeft}s</div>
+            <div className="score">Ord denna runda: {roundScore}</div>
+          </>
+        ) : (
+          <div className="score">Nuvarande svit: {currentStreak}</div>
+        )}
       </div>
       <div className="word-container">
         <div className="word-display">

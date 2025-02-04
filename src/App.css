@@ -160,6 +160,37 @@ body {
   background-color: var(--button-success-hover);
 }
 
+.game-mode-selector {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.game-mode-selector button {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+  max-width: 200px;
+}
+
+.game-mode-selector button:hover {
+  background-color: var(--button-primary);
+  color: white;
+}
+
+.game-mode-selector button.selected {
+  background-color: var(--button-primary);
+  color: white;
+  border-color: var(--button-primary);
+}
+
 .high-scores {
   margin-top: 2rem;
   padding: 1rem;
