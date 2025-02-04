@@ -73,7 +73,8 @@ body {
   border: 1px solid var(--border-color);
 }
 
-.time-left, .score {
+.time-left,
+.score {
   font-size: 1.5rem;
   color: var(--text-primary);
 }
@@ -206,16 +207,6 @@ body {
   box-shadow: 0 2px 4px var(--shadow-color);
 }
 
-.game-mode-selector button:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 20%;
-  height: 60%;
-  width: 1px;
-  background-color: var(--border-color);
-}
-
 .high-scores {
   margin-top: 2rem;
   padding: 1rem;
@@ -338,7 +329,7 @@ body {
     padding: 0.6rem 1rem;
     font-size: 1rem;
   }
-  
+
   .word-display {
     font-size: 2rem;
   }
