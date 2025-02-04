@@ -162,33 +162,58 @@ body {
 
 .game-mode-selector {
   display: flex;
-  gap: 1rem;
   justify-content: center;
   margin-bottom: 2rem;
+  padding: 0.3rem;
+  background-color: var(--bg-secondary);
+  border-radius: 2rem;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .game-mode-selector button {
-  background-color: var(--bg-secondary);
+  background-color: transparent;
   color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  border: none;
   padding: 0.8rem 1.5rem;
   font-size: 1.1rem;
-  border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.2s;
+  position: relative;
   flex: 1;
-  max-width: 200px;
+  white-space: nowrap;
 }
 
-.game-mode-selector button:hover {
-  background-color: var(--button-primary);
+.game-mode-selector button:first-child {
+  border-radius: 1.5rem 0 0 1.5rem;
+}
+
+.game-mode-selector button:last-child {
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.game-mode-selector button:hover:not(.selected) {
+  background-color: var(--button-hover);
   color: white;
 }
 
 .game-mode-selector button.selected {
   background-color: var(--button-primary);
   color: white;
-  border-color: var(--button-primary);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.game-mode-selector button:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background-color: var(--border-color);
 }
 
 .high-scores {
