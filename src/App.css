@@ -1,3 +1,41 @@
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #2c3e50;
+  --text-accent: #3a6ea5;
+  --button-primary: #6b9ac4;
+  --button-hover: #4a7aa4;
+  --button-success: #68b687;
+  --button-success-hover: #4a9869;
+  --accent-color: #6b9ac4;
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --error-color: #e57373;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #e1e1e1;
+    --text-accent: #8ab4d8;
+    --button-primary: #4a7aa4;
+    --button-hover: #6b9ac4;
+    --button-success: #4a9869;
+    --button-success-hover: #68b687;
+    --accent-color: #8ab4d8;
+    --border-color: #404040;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --error-color: #ff8a80;
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
 #root {
   max-width: 800px;
   margin: 0 auto;
@@ -12,15 +50,16 @@
 }
 
 .sje-game {
-  background: white;
+  background: var(--bg-primary);
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px var(--shadow-color);
   width: 100%;
+  border: 1px solid var(--border-color);
 }
 
 .sje-game h1 {
-  color: #2c3e50;
+  color: var(--text-primary);
   margin-bottom: 2rem;
 }
 
@@ -29,17 +68,18 @@
   justify-content: space-around;
   margin-bottom: 2rem;
   padding: 1rem;
-  background-color: #f8f9fa;
+  background-color: var(--bg-secondary);
   border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
 }
 
 .time-left, .score {
   font-size: 1.5rem;
-  color: #2c3e50;
+  color: var(--text-primary);
 }
 
 .time-left {
-  color: #e74c3c;
+  color: var(--error-color);
   font-weight: bold;
 }
 
@@ -57,18 +97,18 @@
 }
 
 .prefix {
-  color: #e74c3c;
+  color: var(--error-color);
   font-weight: bold;
 }
 
 .word-ending {
-  color: #2c3e50;
+  color: var(--text-primary);
 }
 
 .message {
   min-height: 1.5rem;
   margin: 1rem 0;
-  color: #2c3e50;
+  color: var(--text-primary);
 }
 
 .buttons {
@@ -80,45 +120,46 @@
 }
 
 .buttons button {
-  background-color: #3498db;
+  background-color: var(--button-primary);
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
   font-size: 1.2rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
 }
 
 .buttons button:hover {
-  background-color: #2980b9;
+  background-color: var(--button-hover);
 }
 
 .start-button {
-  background-color: #2ecc71;
+  background-color: var(--button-success);
   color: white;
   border: none;
   padding: 1rem 2rem;
   font-size: 1.3rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
   margin: 2rem 0;
 }
 
 .start-button:hover {
-  background-color: #27ae60;
+  background-color: var(--button-success-hover);
 }
 
 .high-scores {
   margin-top: 2rem;
   padding: 1rem;
-  background-color: #f8f9fa;
+  background-color: var(--bg-secondary);
   border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
 }
 
 .high-scores h2 {
-  color: #2c3e50;
+  color: var(--text-primary);
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -132,8 +173,8 @@
 .high-scores li {
   padding: 0.5rem;
   font-size: 1.1rem;
-  color: #2c3e50;
-  border-bottom: 1px solid #e9ecef;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .high-scores li:last-child {
@@ -159,13 +200,15 @@
 .name-input-form input {
   padding: 0.8rem 1rem;
   font-size: 1rem;
-  border: 2px solid #3498db;
+  border: 2px solid var(--button-primary);
   border-radius: 0.5rem;
   outline: none;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .name-input-form input:focus {
-  border-color: #2980b9;
+  border-color: var(--button-hover);
 }
 
 .existing-names {
@@ -175,7 +218,7 @@
 
 .existing-names p {
   margin: 0 0 0.5rem 0;
-  color: #2c3e50;
+  color: var(--text-primary);
 }
 
 .name-buttons {
@@ -186,9 +229,9 @@
 }
 
 .name-buttons button {
-  background-color: #f8f9fa;
-  color: #2c3e50;
-  border: 1px solid #dee2e6;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   border-radius: 0.5rem;
@@ -197,30 +240,31 @@
 }
 
 .name-buttons button:hover {
-  background-color: #e9ecef;
+  background-color: var(--button-primary);
+  color: white;
 }
 
 .name-buttons button.selected {
-  background-color: #3498db;
+  background-color: var(--button-primary);
   color: white;
-  border-color: #3498db;
+  border-color: var(--button-primary);
 }
 
 .name-input-form > button[type="submit"] {
-  background-color: #3498db;
+  background-color: var(--button-primary);
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
   width: 100%;
   max-width: 400px;
 }
 
 .name-input-form > button[type="submit"]:hover {
-  background-color: #2980b9;
+  background-color: var(--button-hover);
 }
 
 @media (max-width: 600px) {
