@@ -214,11 +214,6 @@ export function SjeGame() {
             Så många som möjligt i rad
           </button>
         </div>
-        <div className="score">
-          {gameMode === 'time' 
-            ? `Bästa poäng: ${score}` 
-            : `Bästa svit: ${bestStreak}`}
-        </div>
         <div className={`message ${messageType}`}>{message}</div>
         {showNameInput ? (
           <form onSubmit={handleNameSubmit} className="name-input-form">
