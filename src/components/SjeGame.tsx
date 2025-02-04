@@ -46,13 +46,32 @@ export function SjeGame() {
   }, []);
 
   const saveHighScore = (name: string, score: number) => {
-    const newScore: HighScore = {
-      name,
-      score,
-      date: new Date().toLocaleDateString('sv-SE')
-    };
+    const trimmedName = name.trim();
+    const existingScoreIndex = highScores.findIndex(s => s.name === trimmedName);
+    let newHighScores: HighScore[];
 
-    const newHighScores = [...highScores, newScore]
+    if (existingScoreIndex !== -1) {
+      // Update existing score if new score is higher
+      if (score > highScores[existingScoreIndex].score) {
+        newHighScores = highScores.map((s, index) => 
+          index === existingScoreIndex 
+            ? { ...s, score, date: new Date().toLocaleDateString('sv-SE') }
+            : s
+        );
+      } else {
+        setShowNameInput(false);
+        return; // Don't update if new score is not higher
+      }
+    } else {
+      // Add new score
+      newHighScores = [...highScores, {
+        name: trimmedName,
+        score,
+        date: new Date().toLocaleDateString('sv-SE')
+      }];
+    }
+
+    newHighScores = newHighScores
       .sort((a, b) => b.score - a.score)
       .slice(0, MAX_HIGH_SCORES);
 
@@ -67,6 +86,10 @@ export function SjeGame() {
       saveHighScore(playerName.trim(), roundScore);
       setPlayerName('');
     }
+  };
+
+  const handleExistingNameSelect = (name: string) => {
+    setPlayerName(name);
   };
 
   const startNewGame = () => {
@@ -133,14 +156,33 @@ export function SjeGame() {
         <div className="message">{message}</div>
         {showNameInput ? (
           <form onSubmit={handleNameSubmit} className="name-input-form">
-            <input
-              type="text"
-              value={playerName}
-              onChange={(e) => setPlayerName(e.target.value)}
-              placeholder="Skriv ditt namn"
-              maxLength={20}
-              required
-            />
+            <div className="name-input-container">
+              <input
+                type="text"
+                value={playerName}
+                onChange={(e) => setPlayerName(e.target.value)}
+                placeholder="Skriv ditt namn"
+                maxLength={20}
+                required
+              />
+              {highScores.length > 0 && (
+                <div className="existing-names">
+                  <p>Eller välj ditt namn:</p>
+                  <div className="name-buttons">
+                    {highScores.map((score, index) => (
+                      <button
+                        key={index}
+                        type="button"
+                        onClick={() => handleExistingNameSelect(score.name)}
+                        className={playerName === score.name ? 'selected' : ''}
+                      >
+                        {score.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
             <button type="submit">Spara poäng</button>
           </form>
         ) : (
