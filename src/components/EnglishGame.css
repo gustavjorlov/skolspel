@@ -1,13 +1,19 @@
 .english-game {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
   text-align: center;
+  background: var(--bg-primary);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  width: 100%;
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
 }
 
 .english-game h1 {
-  color: #333;
-  margin-bottom: 30px;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
 }
 
 .game-mode-selector {
@@ -53,9 +59,10 @@
 .high-scores li {
   padding: 8px;
   margin: 5px 0;
-  background-color: white;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .name-input-form {

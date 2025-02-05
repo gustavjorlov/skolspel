@@ -37,10 +37,6 @@
       "icon": "AccessTime"
     },
     {
-      "word": "apple",
-      "icon": "Apple"
-    },
-    {
       "word": "pizza",
       "icon": "LocalPizza"
     },
@@ -50,23 +46,7 @@
     },
     {
       "word": "icecream",
-      "icon": "IcecreamRounded"
-    },
-    {
-      "word": "cat",
-      "icon": "Pets"
-    },
-    {
-      "word": "dog",
-      "icon": "Pets"
-    },
-    {
-      "word": "fish",
-      "icon": "SetMeal"
-    },
-    {
-      "word": "bird",
-      "icon": "CatchingPokemon"
+      "icon": "Icecream"
     },
     {
       "word": "pencil",
@@ -81,28 +61,12 @@
       "icon": "Cloud"
     },
     {
-      "word": "rain",
-      "icon": "WaterDrop"
-    },
-    {
-      "word": "snow",
-      "icon": "AcUnit"
-    },
-    {
       "word": "ball",
       "icon": "SportsSoccer"
     },
     {
-      "word": "gift",
-      "icon": "CardGiftcard"
-    },
-    {
       "word": "key",
       "icon": "Key"
-    },
-    {
-      "word": "shirt",
-      "icon": "Checkroom"
     },
     {
       "word": "bed",
@@ -121,12 +85,8 @@
       "icon": "DoorFront"
     },
     {
-      "word": "window",
-      "icon": "Window"
-    },
-    {
       "word": "lamp",
-      "icon": "LightbulbCircle"
+      "icon": "Lightbulb"
     },
     {
       "word": "flower",
@@ -153,7 +113,7 @@
       "icon": "DirectionsBoat"
     },
     {
-      "word": "music",
+      "word": "note",
       "icon": "MusicNote"
     },
     {
@@ -169,28 +129,12 @@
       "icon": "Cookie"
     },
     {
-      "word": "sandwich",
+      "word": "hamburger",
       "icon": "LunchDining"
     },
     {
-      "word": "milk",
-      "icon": "LocalDrink"
-    },
-    {
-      "word": "water",
-      "icon": "Water"
-    },
-    {
-      "word": "juice",
-      "icon": "LocalBar"
-    },
-    {
-      "word": "hat",
+      "word": "face",
       "icon": "Face"
-    },
-    {
-      "word": "bag",
-      "icon": "BackPack"
     },
     {
       "word": "umbrella",
@@ -201,10 +145,6 @@
       "icon": "DarkMode"
     },
     {
-      "word": "beach",
-      "icon": "Beach"
-    },
-    {
       "word": "mountain",
       "icon": "Landscape"
     },
@@ -213,20 +153,12 @@
       "icon": "Yard"
     },
     {
-      "word": "farm",
-      "icon": "AgricultureRounded"
-    },
-    {
       "word": "robot",
       "icon": "SmartToy"
     },
     {
       "word": "rocket",
       "icon": "Rocket"
-    },
-    {
-      "word": "crown",
-      "icon": "WorkspacePremium"
     },
     {
       "word": "castle",

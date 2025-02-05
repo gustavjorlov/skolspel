@@ -1,10 +1,26 @@
 nav {
   display: flex;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
-  padding: 1rem 0;
-  color: #fff;
+  padding: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1976d2;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+nav a:hover {
+  background-color: #e3f2fd;
+}
+
+.view-all {
+  margin-left: auto;
 }
 
 .breadcrumb {

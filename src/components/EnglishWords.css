@@ -1,0 +1,56 @@
+.english-words {
+  padding: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.english-words h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.words-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.word-item {
+  display: flex;
+  flex: 0 1 150px;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  transition: transform 0.2s;
+}
+
+.word-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  margin-bottom: 10px;
+  color: #1976d2;
+}
+
+.word-info {
+  text-align: center;
+}
+
+.icon-name {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.word-text {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #333;
+}

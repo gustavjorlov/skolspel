@@ -1,11 +1,11 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import "./Navigation.css";
 
 const Navigation = () => {
   return (
     <div>
       <nav>
-        <a href="/">Tillbaka</a>
+        <Link to="/">Tillbaka</Link>
       </nav>
       <Outlet />
     </div>
