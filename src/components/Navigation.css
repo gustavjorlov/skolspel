@@ -1,0 +1,12 @@
+nav {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+  padding: 1rem 0;
+  color: #fff;
+}
+
+.breadcrumb {
+  color: #999;
+}
