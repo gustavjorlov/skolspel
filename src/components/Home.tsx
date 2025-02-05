@@ -21,11 +21,14 @@ export function Home() {
           </Link>
         </div>
         
-        <div className="coming-soon">
-          <h3>Fler spel på väg! ✨</h3>
+        <div className="game-card">
+          <h3>Engelska ordspelet! 🌍</h3>
           <p>
-            Håll utkik efter nya spännande spel som kommer snart!
+            Träna på engelska ord genom att gissa vad bilderna föreställer!
           </p>
+          <Link to="/engelska/glosor" className="play-button">
+            Spela nu!
+          </Link>
         </div>
       </div>
     </div>
