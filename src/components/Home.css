@@ -63,7 +63,8 @@
 }
 
 .play-button:hover {
-  background: #45a049;
+  background: hsl(123, 40%, 35%);
+  color: white
 }
 
 .coming-soon {
