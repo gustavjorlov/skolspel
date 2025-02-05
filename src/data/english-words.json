@@ -13,10 +13,6 @@
       "icon": "Park"
     },
     {
-      "word": "book",
-      "icon": "Book"
-    },
-    {
       "word": "phone",
       "icon": "Smartphone"
     },
@@ -107,10 +103,6 @@
     {
       "word": "shirt",
       "icon": "Checkroom"
-    },
-    {
-      "word": "shoes",
-      "icon": "ShoppingBag"
     },
     {
       "word": "bed",
@@ -221,7 +213,7 @@
       "icon": "Landscape"
     },
     {
-      "word": "garden",
+      "word": "flower",
       "icon": "Yard"
     },
     {
