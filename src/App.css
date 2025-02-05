@@ -26,7 +26,7 @@
     --accent-color: #8ab4d8;
     --border-color: #404040;
     --shadow-color: rgba(0, 0, 0, 0.3);
-    --error-color: #ff8a80;
+    --error-color: hsl(5, 90%, 65%);
   }
 }
 
@@ -116,12 +116,12 @@ body {
 }
 
 .message.correct {
-  color: var(--button-success);
+  background-color: var(--button-success);
   font-weight: bold;
 }
 
 .message.incorrect {
-  color: var(--error-color);
+  background-color: var(--error-color);
   font-weight: bold;
 }
 
