@@ -11,7 +11,7 @@ type Word = {
 export function EnglishWords() {
   return (
     <div className="english-words">
-      <h1>Alla engelska ord</h1>
+      <h1>Alla engelska ord ({wordData.words.length})</h1>
       <div className="words-grid">
         {wordData.words.map((word: Word, index) => {
           const IconComponent: SvgIconComponent = MuiIcons[

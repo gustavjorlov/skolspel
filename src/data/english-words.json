@@ -163,6 +163,90 @@
     {
       "word": "castle",
       "icon": "Castle"
+    },
+    {
+      "word": "body",
+      "icon": "AccessibilityNew"
+    },
+    {
+      "word": "anchor",
+      "icon": "Anchor"
+    },
+    {
+      "word": "flag",
+      "icon": "AssistantPhoto"
+    },
+    {
+      "word": "wand",
+      "icon": "AutoFixHigh"
+    },
+    {
+      "word": "book",
+      "icon": "AutoStories"
+    },
+    {
+      "word": "hand",
+      "icon": "BackHand"
+    },
+    {
+      "word": "wrench",
+      "icon": "Build"
+    },
+    {
+      "word": "letter",
+      "icon": "Drafts"
+    },
+    {
+      "word": "tea",
+      "icon": "EmojiFoodBeverage"
+    },
+    {
+      "word": "flashlight",
+      "icon": "FlashlightOn"
+    },
+    {
+      "word": "cutlery",
+      "icon": "Flatware"
+    },
+    {
+      "word": "sleep",
+      "icon": "Hotel"
+    },
+    {
+      "word": "cogwheels",
+      "icon": "MiscellaneousServices"
+    },
+    {
+      "word": "earth",
+      "icon": "Public"
+    },
+    {
+      "word": "satellite",
+      "icon": "SatelliteAlt"
+    },
+    {
+      "word": "diver",
+      "icon": "ScubaDiving"
+    },
+    {
+      "word": "skateboard",
+      "icon": "Skateboarding"
+    },
+    {
+      "word": "helmet",
+      "icon": "SportsMotorsports"
+    },
+    {
+      "word": "football",
+      "icon": "SportsSoccer"
+    },
+    {
+      "word": "motorcycle",
+      "icon": "TwoWheeler"
+    },
+    {
+      "word": "watch",
+      "icon": "Watch"
     }
   ]
 }

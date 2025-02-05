@@ -17,7 +17,7 @@ type HighScore = {
   date: string;
 };
 
-const ROUND_DURATION = 30; // seconds
+const ROUND_DURATION = 60; // seconds
 const HIGH_SCORES_KEY = {
   time: "englishHighScores",
   streak: "englishStreakHighScores",
@@ -217,7 +217,7 @@ export function EnglishGame() {
             onClick={() => setGameMode("time")}
             className={gameMode === "time" ? "selected" : ""}
           >
-            30 sekunder
+            {ROUND_DURATION} sekunder
           </button>
           <button
             onClick={() => setGameMode("streak")}
@@ -270,7 +270,10 @@ export function EnglishGame() {
         )}
         {(gameMode === "time" ? highScores : streakHighScores).length > 0 && (
           <div className="high-scores">
-            <h2>Topplista - {gameMode === "time" ? "30 sekunder" : "Svit"}</h2>
+            <h2>
+              Topplista -{" "}
+              {gameMode === "time" ? ROUND_DURATION + " sekunder" : "Svit"}
+            </h2>
             <ul>
               {(gameMode === "time" ? highScores : streakHighScores).map(
                 (score, index) => (
@@ -291,7 +294,7 @@ export function EnglishGame() {
 
   // Dynamically get the icon component
   const IconComponent: SvgIconComponent = MuiIcons[
-    currentWord.icon as keyof typeof MuiIcons
+    (currentWord.icon + "TwoTone") as keyof typeof MuiIcons
   ] as SvgIconComponent;
 
   return (
@@ -321,7 +324,6 @@ export function EnglishGame() {
       >
         <div className="icon-display">
           {IconComponent && <IconComponent style={{ fontSize: 100 }} />}
-          {currentWord.icon}
         </div>
         <form onSubmit={handleSubmit}>
           <div className="letter-boxes">
