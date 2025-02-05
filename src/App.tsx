@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { SjeGame } from "./components/SjeGame";
 import { EnglishGame } from "./components/EnglishGame";
 import { EnglishWords } from "./components/EnglishWords";
@@ -8,7 +8,7 @@ import Navigation from "./components/Navigation";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,7 +19,7 @@ function App() {
           </Route>
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
