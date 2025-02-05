@@ -1,0 +1,84 @@
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 3rem;
+}
+
+.games {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.games h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.game-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform 0.2s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.game-card h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.game-card p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.play-button {
+  display: inline-block;
+  background: #4CAF50;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.play-button:hover {
+  background: #45a049;
+}
+
+.coming-soon {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: #888;
+}
+
+.coming-soon h3 {
+  color: #aaa;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.coming-soon p {
+  color: #888;
+}

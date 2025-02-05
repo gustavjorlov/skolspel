@@ -1,11 +1,18 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { SjeGame } from './components/SjeGame'
+import { Home } from './components/Home'
 import './App.css'
 
 function App() {
   return (
-    <div className="app">
-      <SjeGame />
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/svenska/sje" element={<SjeGame />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
