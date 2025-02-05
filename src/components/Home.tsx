@@ -10,7 +10,6 @@ export function Home() {
       </p>
       
       <div className="games">
-        <h2>Tillgängliga spel:</h2>
         <div className="game-card">
           <h3>Gissa sje-ljudet! 🎯</h3>
           <p>
