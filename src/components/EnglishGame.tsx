@@ -288,16 +288,39 @@ export function EnglishGame() {
           <div className="score">Nuvarande svit: {currentStreak}</div>
         )}
       </div>
-      <div className="word-container">
+      <div className="word-container" onClick={(e) => {
+        // Find and focus the hidden input
+        const hiddenInput = e.currentTarget.querySelector('.hidden-input') as HTMLInputElement;
+        if (hiddenInput) {
+          hiddenInput.focus();
+        }
+      }}>
         <div className="icon-display">
           {IconComponent && <IconComponent style={{ fontSize: 100 }} />}
         </div>
         <form onSubmit={handleSubmit}>
+          <div className="letter-boxes">
+            {currentWord.word.split('').map((_, index) => (
+              <input
+                key={index}
+                className="letter-box"
+                type="text"
+                maxLength={1}
+                value={userInput[index] || ''}
+                readOnly
+              />
+            ))}
+          </div>
           <input
             type="text"
+            className="hidden-input"
             value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            placeholder="Skriv ordet..."
+            onChange={(e) => {
+              const value = e.target.value.toLowerCase();
+              if (value.length <= currentWord.word.length) {
+                setUserInput(value);
+              }
+            }}
             autoFocus
           />
           <button type="submit">Svara</button>
