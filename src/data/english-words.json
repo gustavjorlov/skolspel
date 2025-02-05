@@ -39,6 +39,210 @@
     {
       "word": "clock",
       "icon": "AccessTime"
+    },
+    {
+      "word": "apple",
+      "icon": "Apple"
+    },
+    {
+      "word": "pizza",
+      "icon": "LocalPizza"
+    },
+    {
+      "word": "cake",
+      "icon": "Cake"
+    },
+    {
+      "word": "ice cream",
+      "icon": "IcecreamRounded"
+    },
+    {
+      "word": "cat",
+      "icon": "Pets"
+    },
+    {
+      "word": "dog",
+      "icon": "Pets"
+    },
+    {
+      "word": "fish",
+      "icon": "SetMeal"
+    },
+    {
+      "word": "bird",
+      "icon": "CatchingPokemon"
+    },
+    {
+      "word": "pencil",
+      "icon": "Edit"
+    },
+    {
+      "word": "scissors",
+      "icon": "ContentCut"
+    },
+    {
+      "word": "cloud",
+      "icon": "Cloud"
+    },
+    {
+      "word": "rain",
+      "icon": "WaterDrop"
+    },
+    {
+      "word": "snow",
+      "icon": "AcUnit"
+    },
+    {
+      "word": "ball",
+      "icon": "SportsSoccer"
+    },
+    {
+      "word": "gift",
+      "icon": "CardGiftcard"
+    },
+    {
+      "word": "key",
+      "icon": "Key"
+    },
+    {
+      "word": "shirt",
+      "icon": "Checkroom"
+    },
+    {
+      "word": "shoes",
+      "icon": "ShoppingBag"
+    },
+    {
+      "word": "bed",
+      "icon": "Bed"
+    },
+    {
+      "word": "chair",
+      "icon": "Chair"
+    },
+    {
+      "word": "table",
+      "icon": "TableRestaurant"
+    },
+    {
+      "word": "door",
+      "icon": "DoorFront"
+    },
+    {
+      "word": "window",
+      "icon": "Window"
+    },
+    {
+      "word": "lamp",
+      "icon": "LightbulbCircle"
+    },
+    {
+      "word": "flower",
+      "icon": "LocalFlorist"
+    },
+    {
+      "word": "leaf",
+      "icon": "Eco"
+    },
+    {
+      "word": "bus",
+      "icon": "DirectionsBus"
+    },
+    {
+      "word": "bike",
+      "icon": "DirectionsBike"
+    },
+    {
+      "word": "train",
+      "icon": "Train"
+    },
+    {
+      "word": "airplane",
+      "icon": "Flight"
+    },
+    {
+      "word": "boat",
+      "icon": "DirectionsBoat"
+    },
+    {
+      "word": "music",
+      "icon": "MusicNote"
+    },
+    {
+      "word": "camera",
+      "icon": "PhotoCamera"
+    },
+    {
+      "word": "brush",
+      "icon": "Brush"
+    },
+    {
+      "word": "cookie",
+      "icon": "Cookie"
+    },
+    {
+      "word": "sandwich",
+      "icon": "LunchDining"
+    },
+    {
+      "word": "milk",
+      "icon": "LocalDrink"
+    },
+    {
+      "word": "water",
+      "icon": "Water"
+    },
+    {
+      "word": "juice",
+      "icon": "LocalBar"
+    },
+    {
+      "word": "hat",
+      "icon": "Face"
+    },
+    {
+      "word": "bag",
+      "icon": "BackPack"
+    },
+    {
+      "word": "umbrella",
+      "icon": "Umbrella"
+    },
+    {
+      "word": "moon",
+      "icon": "DarkMode"
+    },
+    {
+      "word": "beach",
+      "icon": "Beach"
+    },
+    {
+      "word": "mountain",
+      "icon": "Landscape"
+    },
+    {
+      "word": "garden",
+      "icon": "Yard"
+    },
+    {
+      "word": "farm",
+      "icon": "AgricultureRounded"
+    },
+    {
+      "word": "robot",
+      "icon": "SmartToy"
+    },
+    {
+      "word": "rocket",
+      "icon": "Rocket"
+    },
+    {
+      "word": "crown",
+      "icon": "WorkspacePremium"
+    },
+    {
+      "word": "castle",
+      "icon": "Castle"
     }
   ]
 }
