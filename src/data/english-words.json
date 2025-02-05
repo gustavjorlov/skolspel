@@ -1,0 +1,44 @@
+{
+  "words": [
+    {
+      "word": "house",
+      "icon": "Home"
+    },
+    {
+      "word": "car",
+      "icon": "DirectionsCar"
+    },
+    {
+      "word": "tree",
+      "icon": "Park"
+    },
+    {
+      "word": "book",
+      "icon": "Book"
+    },
+    {
+      "word": "phone",
+      "icon": "Smartphone"
+    },
+    {
+      "word": "computer",
+      "icon": "Computer"
+    },
+    {
+      "word": "sun",
+      "icon": "WbSunny"
+    },
+    {
+      "word": "star",
+      "icon": "Star"
+    },
+    {
+      "word": "heart",
+      "icon": "Favorite"
+    },
+    {
+      "word": "clock",
+      "icon": "AccessTime"
+    }
+  ]
+}
