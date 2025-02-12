@@ -1,64 +1,636 @@
 {
   "times": [
     {
-      "phrase": "kvart över ett",
+      "phrase": "kvart över ett på dagen",
       "time": "13:15"
     },
     {
-      "phrase": "halv två",
+      "phrase": "halv två på dagen",
       "time": "13:30"
     },
     {
-      "phrase": "kvart i två",
+      "phrase": "kvart i två på dagen",
       "time": "13:45"
     },
     {
-      "phrase": "två",
+      "phrase": "två på dagen",
       "time": "14:00"
     },
     {
-      "phrase": "fem över två",
+      "phrase": "fem över två på dagen",
       "time": "14:05"
     },
     {
-      "phrase": "tio över två",
+      "phrase": "tio över två på dagen",
       "time": "14:10"
     },
     {
-      "phrase": "tjugo över två",
+      "phrase": "tjugo över två på dagen",
       "time": "14:20"
     },
     {
-      "phrase": "fem i halv tre",
+      "phrase": "fem i halv tre på dagen",
       "time": "14:25"
     },
     {
-      "phrase": "halv tre",
+      "phrase": "halv tre på dagen",
       "time": "14:30"
     },
     {
-      "phrase": "fem över halv tre",
+      "phrase": "fem över halv tre på dagen",
       "time": "14:35"
     },
     {
-      "phrase": "tjugo i tre",
+      "phrase": "tjugo i tre på dagen",
       "time": "14:40"
     },
     {
-      "phrase": "kvart i tre",
+      "phrase": "kvart i tre på dagen",
       "time": "14:45"
     },
     {
-      "phrase": "tio i tre",
+      "phrase": "tio i tre på dagen",
       "time": "14:50"
     },
     {
-      "phrase": "fem i tre",
+      "phrase": "fem i tre på dagen",
       "time": "14:55"
     },
     {
-      "phrase": "fem i tolv",
+      "phrase": "ett på dagen",
+      "time": "13:00"
+    },
+    {
+      "phrase": "fem över ett på dagen",
+      "time": "13:05"
+    },
+    {
+      "phrase": "tio över ett på dagen",
+      "time": "13:10"
+    },
+    {
+      "phrase": "tjugo över ett på dagen",
+      "time": "13:20"
+    },
+    {
+      "phrase": "fem i halv två på dagen",
+      "time": "13:25"
+    },
+    {
+      "phrase": "fem över halv två på dagen",
+      "time": "13:35"
+    },
+    {
+      "phrase": "tjugo i två på dagen",
+      "time": "13:40"
+    },
+    {
+      "phrase": "tio i två på dagen",
+      "time": "13:50"
+    },
+    {
+      "phrase": "fem i två på dagen",
+      "time": "13:55"
+    },
+    {
+      "phrase": "tre på dagen",
+      "time": "15:00"
+    },
+    {
+      "phrase": "fem över tre på dagen",
+      "time": "15:05"
+    },
+    {
+      "phrase": "tio över tre på dagen",
+      "time": "15:10"
+    },
+    {
+      "phrase": "kvart över tre på dagen",
+      "time": "15:15"
+    },
+    {
+      "phrase": "tjugo över tre på dagen",
+      "time": "15:20"
+    },
+    {
+      "phrase": "fem i halv fyra på dagen",
+      "time": "15:25"
+    },
+    {
+      "phrase": "halv fyra på dagen",
+      "time": "15:30"
+    },
+    {
+      "phrase": "fem över halv fyra på dagen",
+      "time": "15:35"
+    },
+    {
+      "phrase": "tjugo i fyra på dagen",
+      "time": "15:40"
+    },
+    {
+      "phrase": "kvart i fyra på dagen",
+      "time": "15:45"
+    },
+    {
+      "phrase": "tio i fyra på dagen",
+      "time": "15:50"
+    },
+    {
+      "phrase": "fem i fyra på dagen",
+      "time": "15:55"
+    },
+    {
+      "phrase": "fyra på dagen",
+      "time": "16:00"
+    },
+    {
+      "phrase": "fem över fyra på dagen",
+      "time": "16:05"
+    },
+    {
+      "phrase": "tio över fyra på dagen",
+      "time": "16:10"
+    },
+    {
+      "phrase": "kvart över fyra på dagen",
+      "time": "16:15"
+    },
+    {
+      "phrase": "tjugo över fyra på dagen",
+      "time": "16:20"
+    },
+    {
+      "phrase": "fem i halv fem på dagen",
+      "time": "16:25"
+    },
+    {
+      "phrase": "halv fem på dagen",
+      "time": "16:30"
+    },
+    {
+      "phrase": "fem över halv fem på dagen",
+      "time": "16:35"
+    },
+    {
+      "phrase": "tjugo i fem på dagen",
+      "time": "16:40"
+    },
+    {
+      "phrase": "kvart i fem på dagen",
+      "time": "16:45"
+    },
+    {
+      "phrase": "tio i fem på dagen",
+      "time": "16:50"
+    },
+    {
+      "phrase": "fem i fem på dagen",
+      "time": "16:55"
+    },
+    {
+      "phrase": "fem på dagen",
+      "time": "17:00"
+    },
+    {
+      "phrase": "fem över fem på dagen",
+      "time": "17:05"
+    },
+    {
+      "phrase": "tio över fem på dagen",
+      "time": "17:10"
+    },
+    {
+      "phrase": "kvart över fem på dagen",
+      "time": "17:15"
+    },
+    {
+      "phrase": "tjugo över fem på dagen",
+      "time": "17:20"
+    },
+    {
+      "phrase": "fem i halv sex på dagen",
+      "time": "17:25"
+    },
+    {
+      "phrase": "halv sex på dagen",
+      "time": "17:30"
+    },
+    {
+      "phrase": "fem över halv sex på dagen",
+      "time": "17:35"
+    },
+    {
+      "phrase": "tjugo i sex på dagen",
+      "time": "17:40"
+    },
+    {
+      "phrase": "kvart i sex på dagen",
+      "time": "17:45"
+    },
+    {
+      "phrase": "tio i sex på dagen",
+      "time": "17:50"
+    },
+    {
+      "phrase": "fem i sex på dagen",
+      "time": "17:55"
+    },
+    {
+      "phrase": "sex på kvällen",
+      "time": "18:00"
+    },
+    {
+      "phrase": "fem över sex på kvällen",
+      "time": "18:05"
+    },
+    {
+      "phrase": "tio över sex på kvällen",
+      "time": "18:10"
+    },
+    {
+      "phrase": "kvart över sex på kvällen",
+      "time": "18:15"
+    },
+    {
+      "phrase": "tjugo över sex på kvällen",
+      "time": "18:20"
+    },
+    {
+      "phrase": "fem i halv sju på kvällen",
+      "time": "18:25"
+    },
+    {
+      "phrase": "halv sju på kvällen",
+      "time": "18:30"
+    },
+    {
+      "phrase": "fem över halv sju på kvällen",
+      "time": "18:35"
+    },
+    {
+      "phrase": "tjugo i sju på kvällen",
+      "time": "18:40"
+    },
+    {
+      "phrase": "kvart i sju på kvällen",
+      "time": "18:45"
+    },
+    {
+      "phrase": "tio i sju på kvällen",
+      "time": "18:50"
+    },
+    {
+      "phrase": "fem i sju på kvällen",
+      "time": "18:55"
+    },
+    {
+      "phrase": "sju på kvällen",
+      "time": "19:00"
+    },
+    {
+      "phrase": "fem över sju på kvällen",
+      "time": "19:05"
+    },
+    {
+      "phrase": "tio över sju på kvällen",
+      "time": "19:10"
+    },
+    {
+      "phrase": "kvart över sju på kvällen",
+      "time": "19:15"
+    },
+    {
+      "phrase": "tjugo över sju på kvällen",
+      "time": "19:20"
+    },
+    {
+      "phrase": "fem i halv åtta på kvällen",
+      "time": "19:25"
+    },
+    {
+      "phrase": "halv åtta på kvällen",
+      "time": "19:30"
+    },
+    {
+      "phrase": "fem över halv åtta på kvällen",
+      "time": "19:35"
+    },
+    {
+      "phrase": "tjugo i åtta på kvällen",
+      "time": "19:40"
+    },
+    {
+      "phrase": "kvart i åtta på kvällen",
+      "time": "19:45"
+    },
+    {
+      "phrase": "tio i åtta på kvällen",
+      "time": "19:50"
+    },
+    {
+      "phrase": "fem i åtta på kvällen",
+      "time": "19:55"
+    },
+    {
+      "phrase": "åtta på kvällen",
+      "time": "20:00"
+    },
+    {
+      "phrase": "fem över åtta på kvällen",
+      "time": "20:05"
+    },
+    {
+      "phrase": "tio över åtta på kvällen",
+      "time": "20:10"
+    },
+    {
+      "phrase": "kvart över åtta på kvällen",
+      "time": "20:15"
+    },
+    {
+      "phrase": "tjugo över åtta på kvällen",
+      "time": "20:20"
+    },
+    {
+      "phrase": "fem i halv nio på kvällen",
+      "time": "20:25"
+    },
+    {
+      "phrase": "halv nio på kvällen",
+      "time": "20:30"
+    },
+    {
+      "phrase": "fem över halv nio på kvällen",
+      "time": "20:35"
+    },
+    {
+      "phrase": "tjugo i nio på kvällen",
+      "time": "20:40"
+    },
+    {
+      "phrase": "kvart i nio på kvällen",
+      "time": "20:45"
+    },
+    {
+      "phrase": "tio i nio på kvällen",
+      "time": "20:50"
+    },
+    {
+      "phrase": "fem i nio på kvällen",
+      "time": "20:55"
+    },
+    {
+      "phrase": "nio på kvällen",
+      "time": "21:00"
+    },
+    {
+      "phrase": "fem över nio på kvällen",
+      "time": "21:05"
+    },
+    {
+      "phrase": "tio över nio på kvällen",
+      "time": "21:10"
+    },
+    {
+      "phrase": "kvart över nio på kvällen",
+      "time": "21:15"
+    },
+    {
+      "phrase": "tjugo över nio på kvällen",
+      "time": "21:20"
+    },
+    {
+      "phrase": "fem i halv tio på kvällen",
+      "time": "21:25"
+    },
+    {
+      "phrase": "halv tio på kvällen",
+      "time": "21:30"
+    },
+    {
+      "phrase": "fem över halv tio på kvällen",
+      "time": "21:35"
+    },
+    {
+      "phrase": "tjugo i tio på kvällen",
+      "time": "21:40"
+    },
+    {
+      "phrase": "kvart i tio på kvällen",
+      "time": "21:45"
+    },
+    {
+      "phrase": "tio i tio på kvällen",
+      "time": "21:50"
+    },
+    {
+      "phrase": "fem i tio på kvällen",
+      "time": "21:55"
+    },
+    {
+      "phrase": "tio på kvällen",
+      "time": "22:00"
+    },
+    {
+      "phrase": "fem över tio på kvällen",
+      "time": "22:05"
+    },
+    {
+      "phrase": "tio över tio på kvällen",
+      "time": "22:10"
+    },
+    {
+      "phrase": "kvart över tio på kvällen",
+      "time": "22:15"
+    },
+    {
+      "phrase": "tjugo över tio på kvällen",
+      "time": "22:20"
+    },
+    {
+      "phrase": "fem i halv elva på kvällen",
+      "time": "22:25"
+    },
+    {
+      "phrase": "halv elva på kvällen",
+      "time": "22:30"
+    },
+    {
+      "phrase": "fem över halv elva på kvällen",
+      "time": "22:35"
+    },
+    {
+      "phrase": "tjugo i elva på kvällen",
+      "time": "22:40"
+    },
+    {
+      "phrase": "kvart i elva på kvällen",
+      "time": "22:45"
+    },
+    {
+      "phrase": "tio i elva på kvällen",
+      "time": "22:50"
+    },
+    {
+      "phrase": "fem i elva på kvällen",
+      "time": "22:55"
+    },
+    {
+      "phrase": "elva på kvällen",
+      "time": "23:00"
+    },
+    {
+      "phrase": "fem över elva på kvällen",
+      "time": "23:05"
+    },
+    {
+      "phrase": "tio över elva på kvällen",
+      "time": "23:10"
+    },
+    {
+      "phrase": "kvart över elva på kvällen",
+      "time": "23:15"
+    },
+    {
+      "phrase": "tjugo över elva på kvällen",
+      "time": "23:20"
+    },
+    {
+      "phrase": "fem i halv tolv på natten",
+      "time": "23:25"
+    },
+    {
+      "phrase": "halv tolv på natten",
+      "time": "23:30"
+    },
+    {
+      "phrase": "fem över halv tolv på natten",
+      "time": "23:35"
+    },
+    {
+      "phrase": "tjugo i tolv på natten",
+      "time": "23:40"
+    },
+    {
+      "phrase": "kvart i tolv på natten",
+      "time": "23:45"
+    },
+    {
+      "phrase": "tio i tolv på natten",
+      "time": "23:50"
+    },
+    {
+      "phrase": "fem i tolv på natten",
       "time": "23:55"
+    },
+    {
+      "phrase": "ett på morgonen",
+      "time": "01:00"
+    },
+    {
+      "phrase": "fem över ett på morgonen",
+      "time": "01:05"
+    },
+    {
+      "phrase": "tio över ett på morgonen",
+      "time": "01:10"
+    },
+    {
+      "phrase": "kvart över ett på morgonen",
+      "time": "01:15"
+    },
+    {
+      "phrase": "tjugo över ett på morgonen",
+      "time": "01:20"
+    },
+    {
+      "phrase": "fem i halv två på morgonen",
+      "time": "01:25"
+    },
+    {
+      "phrase": "halv två på morgonen",
+      "time": "01:30"
+    },
+    {
+      "phrase": "fem över halv två på morgonen",
+      "time": "01:35"
+    },
+    {
+      "phrase": "tjugo i två på morgonen",
+      "time": "01:40"
+    },
+    {
+      "phrase": "kvart i två på morgonen",
+      "time": "01:45"
+    },
+    {
+      "phrase": "tio i två på morgonen",
+      "time": "01:50"
+    },
+    {
+      "phrase": "fem i två på morgonen",
+      "time": "01:55"
+    },
+    {
+      "phrase": "två på morgonen",
+      "time": "02:00"
+    },
+    {
+      "phrase": "fem över två på morgonen",
+      "time": "02:05"
+    },
+    {
+      "phrase": "tio över två på morgonen",
+      "time": "02:10"
+    },
+    {
+      "phrase": "kvart över två på morgonen",
+      "time": "02:15"
+    },
+    {
+      "phrase": "tjugo över två på morgonen",
+      "time": "02:20"
+    },
+    {
+      "phrase": "fem i halv tre på morgonen",
+      "time": "02:25"
+    },
+    {
+      "phrase": "halv tre på morgonen",
+      "time": "02:30"
+    },
+    {
+      "phrase": "fem över halv tre på morgonen",
+      "time": "02:35"
+    },
+    {
+      "phrase": "tjugo i tre på morgonen",
+      "time": "02:40"
+    },
+    {
+      "phrase": "kvart i tre på morgonen",
+      "time": "02:45"
+    },
+    {
+      "phrase": "tio i tre på morgonen",
+      "time": "02:50"
+    },
+    {
+      "phrase": "fem i tre på morgonen",
+      "time": "02:55"
+    },
+    {
+      "phrase": "tre på morgonen",
+      "time": "03:00"
+    },
+    {
+      "phrase": "fem över tre på morgonen",
+      "time": "03:05"
+    },
+    {
+      "phrase": "tio över tre på morgonen",
+      "time": "03:10"
     }
   ]
 }
