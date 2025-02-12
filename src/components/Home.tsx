@@ -11,6 +11,16 @@ export function Home() {
       
       <div className="games">
         <div className="game-card">
+          <h3>Klockan! ⏰</h3>
+          <p>
+            Träna på att läsa klockan genom att översätta tiden från text till siffror!
+          </p>
+          <Link to="/matte/klockan" className="play-button">
+            Spela nu!
+          </Link>
+        </div>
+
+        <div className="game-card">
           <h3>Gissa sje-ljudet! 🎯</h3>
           <p>
             Kan du hitta alla ord med sje-ljud? Testa dina kunskaper i detta spännande spel!

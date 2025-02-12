@@ -1,0 +1,64 @@
+{
+  "times": [
+    {
+      "phrase": "kvart över ett",
+      "time": "13:15"
+    },
+    {
+      "phrase": "halv två",
+      "time": "13:30"
+    },
+    {
+      "phrase": "kvart i två",
+      "time": "13:45"
+    },
+    {
+      "phrase": "två",
+      "time": "14:00"
+    },
+    {
+      "phrase": "fem över två",
+      "time": "14:05"
+    },
+    {
+      "phrase": "tio över två",
+      "time": "14:10"
+    },
+    {
+      "phrase": "tjugo över två",
+      "time": "14:20"
+    },
+    {
+      "phrase": "fem i halv tre",
+      "time": "14:25"
+    },
+    {
+      "phrase": "halv tre",
+      "time": "14:30"
+    },
+    {
+      "phrase": "fem över halv tre",
+      "time": "14:35"
+    },
+    {
+      "phrase": "tjugo i tre",
+      "time": "14:40"
+    },
+    {
+      "phrase": "kvart i tre",
+      "time": "14:45"
+    },
+    {
+      "phrase": "tio i tre",
+      "time": "14:50"
+    },
+    {
+      "phrase": "fem i tre",
+      "time": "14:55"
+    },
+    {
+      "phrase": "fem i tolv",
+      "time": "23:55"
+    }
+  ]
+}
