@@ -105,6 +105,9 @@
   top: 0;
   left: 0;
   cursor: text;
+  color: transparent;
+  background-color: transparent;
+  caret-color: transparent;
 }
 
 .time-container button {

@@ -170,8 +170,9 @@ export function TimeGame() {
     e.preventDefault();
     if (!currentTime || !isPlaying) return;
 
-    const guess = userInput.trim();
-    if (guess === currentTime.time) {
+    const guess = userInput.trim().replace(':', '');
+    const targetTime = currentTime.time.replace(':', '');
+    if (guess === targetTime) {
       setMessage("Rätt!");
       setMessageType("correct");
       setScore(score + 1);
@@ -339,7 +340,7 @@ export function TimeGame() {
                   key={`minute-${index}`}
                   className="digit-box"
                 >
-                  {userInput.split(':')[1]?.[index] || ''}
+                  {userInput.substring(2, 4)?.[index] || ''}
                 </div>
               ))}
             </div>
@@ -354,14 +355,14 @@ export function TimeGame() {
                     // Format as HH:MM
                     const hours = value.slice(0, 2);
                     const minutes = value.slice(2);
-                    setUserInput(`${hours}:${minutes}`);
+                    setUserInput(`${hours}${minutes}`);
                   } else {
                     setUserInput(value);
                   }
                 }
               }}
               placeholder="HH:MM"
-              pattern="[0-9]{2}:[0-9]{2}"
+              pattern="[0-9]{2}[0-9]{2}"
               title="Ange tiden i formatet HH:MM"
               autoFocus
             />
