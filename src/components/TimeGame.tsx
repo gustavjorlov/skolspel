@@ -345,7 +345,7 @@ export function TimeGame() {
               ))}
             </div>
             <input
-              type="text"
+              type="tel"
               className="hidden-input"
               value={userInput}
               onChange={(e) => {
