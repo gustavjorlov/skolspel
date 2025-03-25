@@ -1,0 +1,64 @@
+{
+  "shapes": [
+    {
+      "name": "triangle",
+      "svg": "M50,10 L90,90 L10,90 Z",
+      "viewBox": "0 0 100 100",
+      "options": ["triangel", "kvadrat", "cirkel", "rektangel"]
+    },
+    {
+      "name": "square",
+      "svg": "M10,10 H90 V90 H10 Z",
+      "viewBox": "0 0 100 100",
+      "options": ["kvadrat", "triangel", "cirkel", "rektangel"]
+    },
+    {
+      "name": "circle",
+      "svg": "M50,50 m-40,0 a40,40 0 1,0 80,0 a40,40 0 1,0 -80,0",
+      "viewBox": "0 0 100 100",
+      "options": ["cirkel", "triangel", "kvadrat", "rektangel"]
+    },
+    {
+      "name": "rectangle",
+      "svg": "M10,20 H90 V80 H10 Z",
+      "viewBox": "0 0 100 100",
+      "options": ["rektangel", "triangel", "kvadrat", "cirkel"]
+    },
+    {
+      "name": "pentagon",
+      "svg": "M50,10 L90,40 L80,90 L20,90 L10,40 Z",
+      "viewBox": "0 0 100 100",
+      "options": ["pentagon", "hexagon", "oktagon", "triangel"]
+    },
+    {
+      "name": "hexagon",
+      "svg": "M50,10 L90,35 L90,65 L50,90 L10,65 L10,35 Z",
+      "viewBox": "0 0 100 100",
+      "options": ["hexagon", "pentagon", "oktagon", "triangel"]
+    },
+    {
+      "name": "octagon",
+      "svg": "M30,10 L70,10 L90,30 L90,70 L70,90 L30,90 L10,70 L10,30 Z",
+      "viewBox": "0 0 100 100",
+      "options": ["oktagon", "pentagon", "hexagon", "triangel"]
+    },
+    {
+      "name": "rhombus",
+      "svg": "M50,10 L90,50 L50,90 L10,50 Z",
+      "viewBox": "0 0 100 100",
+      "options": ["romb", "parallellogram", "trapets", "triangel"]
+    },
+    {
+      "name": "trapezoid",
+      "svg": "M20,20 H80 L90,80 H10 Z",
+      "viewBox": "0 0 100 100",
+      "options": ["trapets", "romb", "parallellogram", "triangel"]
+    },
+    {
+      "name": "parallelogram",
+      "svg": "M30,20 H90 L70,80 H10 Z",
+      "viewBox": "0 0 100 100",
+      "options": ["parallellogram", "romb", "trapets", "triangel"]
+    }
+  ]
+}
