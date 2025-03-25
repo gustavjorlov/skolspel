@@ -21,6 +21,16 @@ export function Home() {
         </div>
 
         <div className="game-card">
+          <h3>Geometri! 📐</h3>
+          <p>
+            Lär dig känna igen olika geometriska former genom detta spännande spel!
+          </p>
+          <Link to="/matte/geometri" className="play-button">
+            Spela nu!
+          </Link>
+        </div>
+
+        <div className="game-card">
           <h3>Gissa sje-ljudet! 🎯</h3>
           <p>
             Kan du hitta alla ord med sje-ljud? Testa dina kunskaper i detta spännande spel!
