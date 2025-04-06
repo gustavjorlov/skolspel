@@ -8,32 +8,25 @@ export function Home() {
       <p className="intro">
         Här kan du träna på skolämnen på ett roligt sätt! Utforska spelen och lär dig medan du har kul.
       </p>
-      
+
+
+
       <div className="games">
         <div className="category">
-          <h2>Språk 📚</h2>
+          <h2>Geografi 🗺️</h2>
           <div className="category-games">
             <div className="game-card">
-              <h3>Gissa sje-ljudet! 🎯</h3>
+              <h3>Europas länder! 🌍</h3>
               <p>
-                Kan du hitta alla ord med sje-ljud? Testa dina kunskaper i detta spännande spel!
+                Testa dina kunskaper om Europas länder i detta quiz-spel!
               </p>
-              <Link to="/svenska/sje" className="play-button">
-                Spela nu!
-              </Link>
-            </div>
-            
-            <div className="game-card">
-              <h3>Engelska ordspelet! 🌍</h3>
-              <p>
-                Träna på engelska ord genom att gissa vad bilderna föreställer!
-              </p>
-              <Link to="/engelska/glosor" className="play-button">
+              <Link to="/geografi/europa" className="play-button">
                 Spela nu!
               </Link>
             </div>
           </div>
         </div>
+
 
         <div className="category">
           <h2>Matte 🔢</h2>
@@ -61,14 +54,24 @@ export function Home() {
         </div>
 
         <div className="category">
-          <h2>Geografi 🗺️</h2>
+          <h2>Språk 📚</h2>
           <div className="category-games">
             <div className="game-card">
-              <h3>Europas länder! 🌍</h3>
+              <h3>Gissa sje-ljudet! 🎯</h3>
               <p>
-                Testa dina kunskaper om Europas länder i detta quiz-spel!
+                Kan du hitta alla ord med sje-ljud? Testa dina kunskaper i detta spännande spel!
               </p>
-              <Link to="/geografi/europa" className="play-button">
+              <Link to="/svenska/sje" className="play-button">
+                Spela nu!
+              </Link>
+            </div>
+
+            <div className="game-card">
+              <h3>Engelska ordspelet! 🌍</h3>
+              <p>
+                Träna på engelska ord genom att gissa vad bilderna föreställer!
+              </p>
+              <Link to="/engelska/glosor" className="play-button">
                 Spela nu!
               </Link>
             </div>
