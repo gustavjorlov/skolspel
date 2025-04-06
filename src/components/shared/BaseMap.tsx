@@ -69,11 +69,11 @@ export function BaseMap({
                       outline: "none"
                     },
                     hover: {
-                      fill: "#F53",
+                      fill: geo.properties?.name === highlightedCountry ? '#F53' : '#D6D6DA',
                       outline: "none"
                     },
                     pressed: {
-                      fill: "#E42",
+                      fill: geo.properties?.name === highlightedCountry ? '#E42' : '#D6D6DA',
                       outline: "none"
                     }
                   }}
