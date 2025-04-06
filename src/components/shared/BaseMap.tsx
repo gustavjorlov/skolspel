@@ -2,7 +2,23 @@ import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simp
 import { FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
 import { geoPath, geoMercator } from "d3-geo";
 
-const SMALL_COUNTRIES = ['Vatican City', 'Monaco', 'San Marino', 'Liechtenstein', 'Malta', 'Andorra'];
+const SMALL_COUNTRIES = [
+  'Vatican City', 
+  'Monaco', 
+  'San Marino', 
+  'Liechtenstein', 
+  'Malta', 
+  'Andorra',
+  'Luxembourg',
+  'Singapore',
+  'Bahrain',
+  'Maldives',
+  'Barbados',
+  'Cyprus',
+  'Mauritius',
+  'Comoros',
+  'Brunei'
+];
 
 interface BaseMapProps {
   worldData: FeatureCollection<Geometry, GeoJsonProperties>;
