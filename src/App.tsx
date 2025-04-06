@@ -4,7 +4,6 @@ import { EnglishGame } from "./components/EnglishGame";
 import { EnglishWords } from "./components/EnglishWords";
 import { TimeGame } from "./components/TimeGame";
 import { GeometryGame } from "./components/GeometryGame";
-import { MapGame } from "./components/MapGame";
 import { EuropeQuizGame } from "./components/EuropeQuizGame";
 import { Home } from "./components/Home";
 import "./App.css";
@@ -22,7 +21,6 @@ function App() {
             <Route path="/svenska/sje" element={<SjeGame />} />
             <Route path="/engelska/glosor" element={<EnglishGame />} />
             <Route path="/engelska/glosor/alla" element={<EnglishWords />} />
-            <Route path="/geografi/varldskartan" element={<MapGame />} />
             <Route path="/geografi/europa" element={<EuropeQuizGame />} />
           </Route>
         </Routes>

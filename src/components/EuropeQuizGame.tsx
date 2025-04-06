@@ -14,6 +14,11 @@ type HighScore = {
   date: string;
 };
 
+type CountryOption = {
+  en: string;
+  sv: string;
+};
+
 const ROUND_DURATION = 60; // seconds
 const HIGH_SCORES_KEY = {
   time: "europeHighScores",
@@ -23,7 +28,7 @@ const MAX_HIGH_SCORES = 5;
 
 export function EuropeQuizGame() {
   const [targetCountry, setTargetCountry] = useState<string | null>(null);
-  const [options, setOptions] = useState<string[]>([]);
+  const [options, setOptions] = useState<CountryOption[]>([]);
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState<"correct" | "incorrect" | "">("");
   const [score, setScore] = useState(0);
@@ -159,6 +164,11 @@ export function EuropeQuizGame() {
   }, [getRandomCountry, europeanCountries]);
 
   useEffect(() => {
+    if (!isPlaying) return;
+    newRound();
+  }, [isPlaying, newRound]);
+
+  useEffect(() => {
     if (gameMode === "time" && isPlaying && timeLeft > 0) {
       const timer = setInterval(() => {
         setTimeLeft((prev) => {
@@ -178,11 +188,11 @@ export function EuropeQuizGame() {
     }
   }, [isPlaying, timeLeft, roundScore, gameMode]);
 
-  const handleCountrySelect = (selectedCountry: string) => {
+  const handleCountrySelect = (selectedCountry: CountryOption) => {
     if (!targetCountry || !isPlaying) return;
 
-    if (selectedCountry === targetCountry) {
-      setMessage("Rätt!");
+    if (selectedCountry.en === targetCountry) {
+      setMessage("Rätt");
       setMessageType("correct");
       setScore(score + 1);
 
@@ -201,7 +211,7 @@ export function EuropeQuizGame() {
         newRound();
       }, 1000);
     } else {
-      setMessage(`Fel! Det var ${targetCountry}`);
+      setMessage("Fel");
       setMessageType("incorrect");
 
       if (gameMode === "streak") {
@@ -312,7 +322,7 @@ export function EuropeQuizGame() {
               onClick={() => handleCountrySelect(country)}
               className="country-option"
             >
-              {country}
+              {country.sv}
             </button>
           ))}
         </div>

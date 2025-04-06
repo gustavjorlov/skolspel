@@ -1,14 +1,51 @@
-import { Feature, FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
+import { FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
 
-const EUROPEAN_COUNTRIES = new Set([
-  'Albania', 'Andorra', 'Austria', 'Belarus', 'Belgium', 'Bosnia and Herzegovina',
-  'Bulgaria', 'Croatia', 'Czech Republic', 'Denmark', 'Estonia', 'Finland',
-  'France', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy',
-  'Latvia', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Malta', 'Moldova',
-  'Monaco', 'Montenegro', 'Netherlands', 'North Macedonia', 'Norway', 'Poland',
-  'Portugal', 'Romania', 'Russia', 'San Marino', 'Serbia', 'Slovakia', 'Slovenia',
-  'Spain', 'Sweden', 'Switzerland', 'Ukraine', 'United Kingdom', 'Vatican City'
-]);
+const EUROPEAN_COUNTRIES: Record<string, string> = {
+  'Albania': 'Albanien',
+  'Andorra': 'Andorra',
+  'Austria': 'Österrike',
+  'Belarus': 'Vitryssland',
+  'Belgium': 'Belgien',
+  'Bosnia and Herzegovina': 'Bosnien och Hercegovina',
+  'Bulgaria': 'Bulgarien',
+  'Croatia': 'Kroatien',
+  'Czech Republic': 'Tjeckien',
+  'Denmark': 'Danmark',
+  'Estonia': 'Estland',
+  'Finland': 'Finland',
+  'France': 'Frankrike',
+  'Germany': 'Tyskland',
+  'Greece': 'Grekland',
+  'Hungary': 'Ungern',
+  'Iceland': 'Island',
+  'Ireland': 'Irland',
+  'Italy': 'Italien',
+  'Latvia': 'Lettland',
+  'Liechtenstein': 'Liechtenstein',
+  'Lithuania': 'Litauen',
+  'Luxembourg': 'Luxemburg',
+  'Malta': 'Malta',
+  'Moldova': 'Moldavien',
+  'Monaco': 'Monaco',
+  'Montenegro': 'Montenegro',
+  'Netherlands': 'Nederländerna',
+  'North Macedonia': 'Nordmakedonien',
+  'Norway': 'Norge',
+  'Poland': 'Polen',
+  'Portugal': 'Portugal',
+  'Romania': 'Rumänien',
+  'Russia': 'Ryssland',
+  'San Marino': 'San Marino',
+  'Serbia': 'Serbien',
+  'Slovakia': 'Slovakien',
+  'Slovenia': 'Slovenien',
+  'Spain': 'Spanien',
+  'Sweden': 'Sverige',
+  'Switzerland': 'Schweiz',
+  'Ukraine': 'Ukraina',
+  'United Kingdom': 'Storbritannien',
+  'Vatican City': 'Vatikanstaten'
+};
 
 export const filterEuropeanCountries = (
   worldData: FeatureCollection<Geometry, GeoJsonProperties>
@@ -16,7 +53,7 @@ export const filterEuropeanCountries = (
   return {
     ...worldData,
     features: worldData.features.filter(feature => 
-      EUROPEAN_COUNTRIES.has(feature.properties?.name || '')
+      feature.properties?.name && feature.properties.name in EUROPEAN_COUNTRIES
     )
   };
 };
@@ -25,7 +62,7 @@ export const getRandomOptions = (
   correctCountry: string,
   allCountries: string[],
   numOptions = 4
-): string[] => {
+): { en: string; sv: string }[] => {
   const options = new Set<string>([correctCountry]);
   const availableCountries = allCountries.filter(c => c !== correctCountry);
   
@@ -36,7 +73,10 @@ export const getRandomOptions = (
     availableCountries.splice(randomIndex, 1);
   }
 
-  return shuffleArray(Array.from(options));
+  return shuffleArray(Array.from(options)).map(country => ({
+    en: country,
+    sv: EUROPEAN_COUNTRIES[country]
+  }));
 };
 
 const shuffleArray = <T>(array: T[]): T[] => {
