@@ -49,6 +49,16 @@ export function Home() {
             Spela nu!
           </Link>
         </div>
+
+        <div className="game-card">
+          <h3>Världskartan! 🗺️</h3>
+          <p>
+            Utforska världskartan och lär dig ländernas namn och placering!
+          </p>
+          <Link to="/geografi/varldskartan" className="play-button">
+            Spela nu!
+          </Link>
+        </div>
       </div>
     </div>
   )
