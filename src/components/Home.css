@@ -20,13 +20,33 @@
 .games {
   display: flex;
   flex-direction: column;
+  gap: 3rem;
+}
+
+.category {
+  margin-bottom: 1rem;
+}
+
+.category h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.category-games {
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
-.games h2 {
-  color: #fff;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+@media (min-width: 768px) {
+  .category-games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
 }
 
 .game-card {
