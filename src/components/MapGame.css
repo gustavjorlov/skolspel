@@ -18,7 +18,7 @@
 
 .map-container {
   width: 100%;
-  height: 400px;
+  height: 680px; /* Increased from 400px to ~1.7x size */
   margin: 1rem auto;
   background: var(--bg-secondary);
   border-radius: 0.5rem;
@@ -271,9 +271,36 @@
   background-color: var(--button-success-hover);
 }
 
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.country-option {
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.country-option:hover {
+  background: var(--bg-hover);
+  transform: translateY(-2px);
+}
+
+.country-option:active {
+  transform: translateY(0);
+}
+
 @media (max-width: 600px) {
   .map-container {
-    height: 300px;
+    height: 510px; /* Increased from 300px to maintain 1.7x ratio */
   }
 
   .game-stats {

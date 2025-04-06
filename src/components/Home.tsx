@@ -59,6 +59,16 @@ export function Home() {
             Spela nu!
           </Link>
         </div>
+
+        <div className="game-card">
+          <h3>Europas länder! 🌍</h3>
+          <p>
+            Testa dina kunskaper om Europas länder i detta quiz-spel!
+          </p>
+          <Link to="/geografi/europa" className="play-button">
+            Spela nu!
+          </Link>
+        </div>
       </div>
     </div>
   )
