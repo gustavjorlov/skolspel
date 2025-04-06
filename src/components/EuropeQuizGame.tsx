@@ -3,7 +3,11 @@ import { feature } from "topojson-client";
 import worldAtlas from "world-atlas/countries-50m.json";
 import { FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
 import { BaseMap } from "./shared/BaseMap";
-import { filterEuropeanCountries, getRandomOptions } from "../utils/geographyUtils";
+import { 
+  filterEuropeanCountries, 
+  getRandomOptions, 
+  isSameCountry 
+} from "../utils/geographyUtils";
 import "./MapGame.css";
 
 type GameMode = "time" | "streak";
@@ -191,7 +195,7 @@ export function EuropeQuizGame() {
   const handleCountrySelect = (selectedCountry: CountryOption) => {
     if (!targetCountry || !isPlaying) return;
 
-    if (selectedCountry.en === targetCountry) {
+    if (isSameCountry(selectedCountry.en, targetCountry)) {
       setMessage("Rätt");
       setMessageType("correct");
       setScore(score + 1);
