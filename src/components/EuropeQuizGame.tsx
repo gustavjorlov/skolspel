@@ -330,7 +330,7 @@ export function EuropeQuizGame() {
       <BaseMap
         worldData={worldData}
         center={[15, 55]}
-        zoom={4}
+        zoom={6.5}
         highlightedCountry={targetCountry || undefined}
         onCountryClick={() => {}} // Remove click handling
       />
