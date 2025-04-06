@@ -10,6 +10,7 @@ const EUROPEAN_COUNTRIES: Record<string, string> = {
   'Bulgaria': 'Bulgarien',
   'Croatia': 'Kroatien',
   'Czech Republic': 'Tjeckien',
+  'Czechia': 'Tjeckien',
   'Denmark': 'Danmark',
   'Estonia': 'Estland',
   'Finland': 'Finland',
@@ -44,12 +45,28 @@ const EUROPEAN_COUNTRIES: Record<string, string> = {
   'Switzerland': 'Schweiz',
   'Ukraine': 'Ukraina',
   'United Kingdom': 'Storbritannien',
-  'Vatican City': 'Vatikanstaten'
+  'Vatican City': 'Vatikanstaten',
+  'Cyprus': 'Cypern',
+  'Kosovo': 'Kosovo',
+  'Turkey': 'Turkiet',
+  'United Kingdom of Great Britain and Northern Ireland': 'Storbritannien',
+  'UK': 'Storbritannien',
+  'Great Britain': 'Storbritannien',
+  'Republic of Ireland': 'Irland',
+  'Republic of Moldova': 'Moldavien',
+  'Republic of Croatia': 'Kroatien',
+  'Republic of Slovenia': 'Slovenien',
+  'Republic of Lithuania': 'Litauen',
+  'Republic of Latvia': 'Lettland',
+  'Republic of Estonia': 'Estland',
+  'Republic of Poland': 'Polen'
 };
 
 // Add name mapping to handle discrepancies between GeoJSON data and our country list
 const COUNTRY_NAME_MAPPING: Record<string, string> = {
   'Czechia': 'Czech Republic',
+  'Czech Rep.': 'Czech Republic',
+  'Czech Republic': 'Czech Republic',
   'Bosnia': 'Bosnia and Herzegovina',
   'Bosnia-Herzegovina': 'Bosnia and Herzegovina',
   'Republic of Serbia': 'Serbia',
@@ -65,8 +82,8 @@ const COUNTRY_NAME_MAPPING: Record<string, string> = {
   'Serb.': 'Serbia',
   'Rep. Serbia': 'Serbia',
   'Rep. of Serbia': 'Serbia', 
-  'Republic of Kosovo': 'Serbia',
-  'Kosovo': 'Serbia',
+  'Republic of Kosovo': 'Kosovo',
+  'Kosovo': 'Kosovo',
   'Serbia and Montenegro': 'Serbia',
   'Macedonia': 'North Macedonia',
   'FYR Macedonia': 'North Macedonia',
@@ -75,7 +92,31 @@ const COUNTRY_NAME_MAPPING: Record<string, string> = {
   'Former Yugoslav Republic of Macedonia': 'North Macedonia',
   'Republic of Macedonia': 'North Macedonia',
   'Macedonia (FYROM)': 'North Macedonia',
-  // Add more mappings as needed
+  'N. Macedonia': 'North Macedonia',
+  'United Kingdom': 'United Kingdom',
+  'UK': 'United Kingdom',
+  'Great Britain': 'United Kingdom',
+  'England': 'United Kingdom',
+  'Republic of Ireland': 'Ireland',
+  'Éire': 'Ireland',
+  'Eire': 'Ireland',
+  'Republic of Moldova': 'Moldova',
+  'Slovak Republic': 'Slovakia',
+  'Republic of Slovenia': 'Slovenia',
+  'Republic of Croatia': 'Croatia',
+  'Republic of Poland': 'Poland',
+  'Republic of Latvia': 'Latvia',
+  'Republic of Lithuania': 'Lithuania',
+  'Republic of Estonia': 'Estonia',
+  'Vatican': 'Vatican City',
+  'Holy See': 'Vatican City',
+  'Vatican City State': 'Vatican City',
+  'Kingdom of Denmark': 'Denmark',
+  'Kingdom of Sweden': 'Sweden',
+  'Kingdom of Norway': 'Norway',
+  'Kingdom of the Netherlands': 'Netherlands',
+  'Kingdom of Spain': 'Spain',
+  'Kingdom of Belgium': 'Belgium'
 };
 
 // Reverse mapping for lookup
@@ -122,7 +163,12 @@ export const getRandomOptions = (
   numOptions = 4
 ): { en: string; sv: string }[] => {
   const options = new Set<string>([correctCountry]);
-  const availableCountries = allCountries.filter(c => c !== correctCountry);
+  
+  // Filter countries to only include those that have Swedish translations
+  const availableCountries = allCountries.filter(c => 
+    (c !== correctCountry) && 
+    (EUROPEAN_COUNTRIES[standardizeCountryName(c)] || EUROPEAN_COUNTRIES[c])
+  );
 
   while (options.size < numOptions && availableCountries.length > 0) {
     const randomIndex = Math.floor(Math.random() * availableCountries.length);
@@ -131,10 +177,13 @@ export const getRandomOptions = (
     availableCountries.splice(randomIndex, 1);
   }
 
-  return shuffleArray(Array.from(options)).map(country => ({
-    en: country,
-    sv: EUROPEAN_COUNTRIES[country]
-  }));
+  return shuffleArray(Array.from(options)).map(country => {
+    const standardName = standardizeCountryName(country);
+    return {
+      en: country,
+      sv: EUROPEAN_COUNTRIES[standardName] || EUROPEAN_COUNTRIES[country] || country
+    };
+  });
 };
 
 // Helper function to standardize country names in the game
