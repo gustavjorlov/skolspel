@@ -82,15 +82,21 @@ export function BaseMap({
                   style={{
                     default: {
                       fill: geo.properties?.name === highlightedCountry ? '#F53' : '#D6D6DA',
-                      outline: "none"
+                      outline: "none",
+                      stroke: "#444",
+                      strokeWidth: 0.1
                     },
                     hover: {
                       fill: geo.properties?.name === highlightedCountry ? '#F53' : '#D6D6DA',
-                      outline: "none"
+                      outline: "none",
+                      stroke: "#444",
+                      strokeWidth: 0.1
                     },
                     pressed: {
                       fill: geo.properties?.name === highlightedCountry ? '#E42' : '#D6D6DA',
-                      outline: "none"
+                      outline: "none",
+                      stroke: "#444",
+                      strokeWidth: 0.1
                     }
                   }}
                 />
