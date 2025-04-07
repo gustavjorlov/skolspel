@@ -1,15 +1,16 @@
 :root {
   --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #2c3e50;
-  --text-accent: #3a6ea5;
+  --bg-secondary: #f3f5f7;
+  --bg-hover: #e9ecef;
+  --text-primary: #050709;
+  --text-accent: #192b3f;
   --button-primary: #6b9ac4;
   --button-hover: #4a7aa4;
   --button-success: #68b687;
   --button-success-hover: #4a9869;
   --accent-color: #6b9ac4;
   --border-color: #dee2e6;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.25);
   --error-color: #e57373;
 }
 
@@ -17,6 +18,7 @@
   :root {
     --bg-primary: #1a1a1a;
     --bg-secondary: #2d2d2d;
+    --bg-hover: #3d3d3d;
     --text-primary: #e1e1e1;
     --text-accent: #8ab4d8;
     --button-primary: #4a7aa4;

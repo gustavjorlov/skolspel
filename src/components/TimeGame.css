@@ -3,11 +3,11 @@
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  color: white;
+  color: var(--text-primary);
 }
 
 .time-game h1 {
-  color: white;
+  color: var(--text-primary);
   margin-bottom: 20px;
 }
 
@@ -18,36 +18,36 @@
 .game-mode-selector button {
   padding: 10px 20px;
   font-size: 16px;
-  border: 2px solid #3498db;
-  background-color: #1c1c1c;
-  color: #3498db;
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-primary);
+  color: var(--accent-color);
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .game-mode-selector button.selected {
-  background-color: #3498db;
+  background-color: var(--button-primary);
   color: white;
 }
 
 .game-mode-selector button:hover {
-  background-color: #3498db;
+  background-color: var(--button-hover);
   color: white;
 }
 
 .time-container {
   margin: 20px auto;
   padding: 20px;
-  background-color: #2c2c2c;
+  background-color: var(--bg-secondary);
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .time-phrase {
   font-size: 24px;
   margin-bottom: 20px;
-  color: white;
+  color: var(--text-primary);
 }
 
 .time-container form {
@@ -78,11 +78,11 @@
   width: 40px;
   height: 40px;
   font-size: 24px;
-  border: 2px solid #444;
+  border: 2px solid var(--border-color);
   border-radius: 5px;
   text-align: center;
-  background-color: #1c1c1c;
-  color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,7 +92,7 @@
 .colon {
   font-size: 24px;
   margin: 0 5px;
-  color: white;
+  color: var(--text-primary);
   pointer-events: none;
 }
 
@@ -112,7 +112,7 @@
 .time-container button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #2ecc71;
+  background-color: var(--button-success);
   color: white;
   border: none;
   border-radius: 5px;
@@ -121,7 +121,7 @@
 }
 
 .time-container button:hover {
-  background-color: #27ae60;
+  background-color: var(--button-success-hover);
 }
 
 .game-stats {
@@ -133,11 +133,11 @@
 }
 
 .time-left {
-  color: #e74c3c;
+  color: var(--error-color);
 }
 
 .score {
-  color: #2ecc71;
+  color: var(--button-success);
 }
 
 .message {
@@ -148,19 +148,19 @@
 }
 
 .message.correct {
-  background-color: #1b4332;
-  color: #2ecc71;
+  background-color: var(--button-success);
+  color: white;
 }
 
 .message.incorrect {
-  background-color: #4a1c24;
-  color: #e74c3c;
+  background-color: var(--error-color);
+  color: white;
 }
 
 .start-button {
   padding: 15px 30px;
   font-size: 18px;
-  background-color: #3498db;
+  background-color: var(--button-primary);
   color: white;
   border: none;
   border-radius: 5px;
@@ -169,7 +169,7 @@
 }
 
 .start-button:hover {
-  background-color: #2980b9;
+  background-color: var(--button-hover);
 }
 
 .name-input-form {
@@ -183,15 +183,15 @@
 .name-input-container input {
   padding: 10px;
   font-size: 16px;
-  border: 2px solid #444;
+  border: 2px solid var(--border-color);
   border-radius: 5px;
   width: 200px;
-  background-color: #1c1c1c;
-  color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .name-input-container input::placeholder {
-  color: #888;
+  color: var(--text-accent);
 }
 
 .existing-names {
@@ -209,27 +209,27 @@
 .name-buttons button {
   padding: 5px 15px;
   font-size: 14px;
-  border: 1px solid #3498db;
-  background-color: #1c1c1c;
-  color: #3498db;
+  border: 1px solid var(--accent-color);
+  background-color: var(--bg-primary);
+  color: var(--accent-color);
   border-radius: 15px;
   cursor: pointer;
 }
 
 .name-buttons button.selected {
-  background-color: #3498db;
+  background-color: var(--button-primary);
   color: white;
 }
 
 .high-scores {
   margin-top: 30px;
   padding: 20px;
-  background-color: #2c2c2c;
+  background-color: var(--bg-secondary);
   border-radius: 10px;
 }
 
 .high-scores h2 {
-  color: white;
+  color: var(--text-primary);
   margin-bottom: 15px;
 }
 
@@ -241,5 +241,5 @@
 .high-scores li {
   padding: 5px 0;
   font-size: 16px;
-  color: white;
+  color: var(--text-primary);
 }

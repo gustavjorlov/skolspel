@@ -8,12 +8,12 @@
 .home h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .intro {
   font-size: 1.2rem;
-  color: #ccc;
+  color: var(--text-accent);
   margin-bottom: 3rem;
 }
 
@@ -28,10 +28,10 @@
 }
 
 .category h2 {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid var(--border-color);
   padding-bottom: 0.5rem;
 }
 
@@ -50,30 +50,32 @@
 }
 
 .game-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-secondary);
   border-radius: 1rem;
-  padding: 2rem;
-  transition: transform 0.2s;
+  padding: 2rem;;
+  transition: all 0.2s;
+  box-shadow: 2px 2px 6px var(--shadow-color);
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
+  transform: translate(2px, -4px);
+  box-shadow: 4px 9px 12px var(--shadow-color);
 }
 
 .game-card h3 {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .game-card p {
-  color: #ccc;
+  color: var(--text-accent);
   margin-bottom: 1.5rem;
 }
 
 .play-button {
   display: inline-block;
-  background: #4CAF50;
+  background: var(--button-success);
   color: white;
   padding: 0.8rem 2rem;
   border-radius: 2rem;
@@ -83,23 +85,23 @@
 }
 
 .play-button:hover {
-  background: hsl(123, 40%, 35%);
+  background: var(--button-success-hover);
   color: white
 }
 
 .coming-soon {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-secondary);
   border-radius: 1rem;
   padding: 2rem;
-  color: #888;
+  color: var(--text-accent);
 }
 
 .coming-soon h3 {
-  color: #aaa;
+  color: var(--text-primary);
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .coming-soon p {
-  color: #888;
+  color: var(--text-accent);
 }

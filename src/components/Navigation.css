@@ -8,7 +8,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #1976d2;
+  color: var(--accent-color);
   font-weight: 500;
   padding: 8px 16px;
   border-radius: 4px;
@@ -16,7 +16,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #e3f2fd;
+  background-color: var(--bg-secondary);
 }
 
 .view-all {
@@ -24,5 +24,5 @@ nav a:hover {
 }
 
 .breadcrumb {
-  color: #999;
+  color: var(--text-accent);
 }
